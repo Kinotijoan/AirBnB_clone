@@ -19,8 +19,8 @@ In our case, we want to be able to manage the objects of our project:
 
 #### Installation
 
-```
 First you clone the repository of the project from Github.
+```
 git clone https://github.com/Kinotijoan/AirBnB_clone.git
 cd AirBnB_clone
 ```
@@ -106,7 +106,7 @@ This interpreter has basic console commands such as help, quit, EOF, create, sho
 ### Example Usage
 
 ```python3
-safari@pop-os:~/alx/AirBnB_clone$ ./console.py
+Kinoti@pop-os:~/alx/AirBnB_clone$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
