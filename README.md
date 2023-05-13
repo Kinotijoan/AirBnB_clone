@@ -1,14 +1,13 @@
 # AirBnB_clone - The console
 
-#### Holberton School Airbnb Clone - Command Interpreter Project Description
-
-![Holberton hbnb](holbi.png)
-
-This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
+### project description
+This is the initial stage of creating an AirBnB clone web application. It is crucial because the outcome of this project will be used in all subsequent projects such as HTML/CSS templating, database storage, API, and front-end integration. 
 
 ### What’s a command interpreter?
 
-Do you remember the Shell? It’s exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
+A command interpreter, also known as a shell or command-line interpreter, is a program that allows users to interact with the operating system or other software applications using a text-based interface rather than a graphical user interface (GUI). 
+
+In our case, we want to be able to manage the objects of our project:
 
 - Create a new object (ex: a new User or a new Place)
 - Retrieve an object from a file, a database etc…
@@ -16,14 +15,20 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 - Update attributes of an object
 - Destroy an object
 
+## How to start it
+
 #### Installation
 
 ```
-git clone https://github.com/safarilewis/AirBnB_clone.git
+First you clone the repository of the project from Github.
+git clone https://github.com/Kinotijoan/AirBnB_clone.git
 cd AirBnB_clone
 ```
 
-#### Usage
+#### How to use it
+The command interpreter can work in two modes that is :
+1. The interective
+2. The Non-interactive
 
 ##### Interactive Mode
 
@@ -131,6 +136,6 @@ e9672773-b189-4938-93fa-3ee99abd60ca
 
 ### Authors
 
-- Lewis Safari | [GitHub](https://github.com/safarilewis) |
+- Kinoti Joan | [GitHub](https://github.com/Kinotijoan) |
 
-- Emmanuel Arisa | [GitHub](https://github.com/arisa-n) |
+- Melanie Minayo | [GitHub](https://github.com/MinayoMelanie) |
