@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Entry pont to the command interptater"""
 import cmd
 from models.base_model import BaseModel
 from models.user import User
