@@ -17,6 +17,7 @@ class BaseModel:
             - *args: list of arguments
             - **kwargs: dict of key-values arguments
         """
+
         if kwargs is not None and kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
