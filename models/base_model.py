@@ -57,7 +57,7 @@ class BaseModel:
         instances = models.storage.all()
         counter = 0
         for key, val in instances.items():
-            if(val.__class__.__name__ == cls.__name__):
+            if (val.__class__.__name__ == cls.__name__):
                 counter += 1
         print(counter)
         return "\n"
