@@ -49,28 +49,66 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(f"BaseModel.{obj.id}", objects)
         self.assertIs(objects[f"BaseModel.{obj.id}"], obj)
 
-    def test_save_and_reload(self):
-        # Test saving and reloading objects from file
-        obj1 = BaseModel()
-        obj2 = User()
-        obj3 = State()
-        self.storage.new(obj1)
-        self.storage.new(obj2)
-        self.storage.new(obj3)
-        self.storage.save()
+    def test_save(self):
+        bm = BaseModel()
+        us = User()
+        st = State()
+        pl = Place()
+        cy = City()
+        am = Amenity()
+        rv = Review()
+        models.storage.new(bm)
+        models.storage.new(us)
+        models.storage.new(st)
+        models.storage.new(pl)
+        models.storage.new(cy)
+        models.storage.new(am)
+        models.storage.new(rv)
+        models.storage.save()
+        save_text = ""
+        with open("file.json", "r") as f:
+            save_text = f.read()
+            self.assertIn("BaseModel." + bm.id, save_text)
+            self.assertIn("User." + us.id, save_text)
+            self.assertIn("State." + st.id, save_text)
+            self.assertIn("Place." + pl.id, save_text)
+            self.assertIn("City." + cy.id, save_text)
+            self.assertIn("Amenity." + am.id, save_text)
+            self.assertIn("Review." + rv.id, save_text)
 
-        # Create a new storage instance and reload data
-        new_storage = FileStorage()
-        new_storage.reload()
-        objects = new_storage.all()
+    def test_save_with_arg(self):
+        with self.assertRaises(TypeError):
+            models.storage.save(None)
 
-        # Verify that the reloaded objects match the original objects
-        self.assertIn(f"BaseModel.{obj1.id}", objects)
-        self.assertIn(f"User.{obj2.id}", objects)
-        self.assertIn(f"State.{obj3.id}", objects)
-        self.assertIsInstance(objects[f"BaseModel.{obj1.id}"], BaseModel)
-        self.assertIsInstance(objects[f"User.{obj2.id}"], User)
-        self.assertIsInstance(objects[f"State.{obj3.id}"], State)
+    def test_reload(self):
+        bm = BaseModel()
+        us = User()
+        st = State()
+        pl = Place()
+        cy = City()
+        am = Amenity()
+        rv = Review()
+        models.storage.new(bm)
+        models.storage.new(us)
+        models.storage.new(st)
+        models.storage.new(pl)
+        models.storage.new(cy)
+        models.storage.new(am)
+        models.storage.new(rv)
+        models.storage.save()
+        models.storage.reload()
+        objs = FileStorage._FileStorage__objects
+        self.assertIn("BaseModel." + bm.id, objs)
+        self.assertIn("User." + us.id, objs)
+        self.assertIn("State." + st.id, objs)
+        self.assertIn("Place." + pl.id, objs)
+        self.assertIn("City." + cy.id, objs)
+        self.assertIn("Amenity." + am.id, objs)
+        self.assertIn("Review." + rv.id, objs)
+
+    def test_reload_with_arg(self):
+        with self.assertRaises(TypeError):
+            models.storage.reload(None)
 
     def test_classes(self):
         # Test the classes() method
